@@ -3,7 +3,7 @@ package com.t.core.util;
 public class StrUtils {
 	
 	/**
-	 * ÑéÖ¤ÊÇ·ñÎª¿Õ×Ö·û´®
+	 * éªŒè¯æ˜¯å¦ä¸ºç©ºå­—ç¬¦ä¸²
 	 * @param str
 	 * @return boolean
 	 */

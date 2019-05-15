@@ -6,7 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * ÈÕÆÚ¹¤¾ßÀà
+ * æ—¥æœŸå·¥å…·ç±»
  * @author TimmyTan
  */
 public class DateUtils {
@@ -21,10 +21,10 @@ public class DateUtils {
 	public static final String PATTERN_HOUR_ONLY = "HH";
 
 	/**
-	 * ÈÕÆÚÏà¼Ó¼õÌìÊı
-	 * @param date Èç¹ûÎªNull£¬ÔòÎªµ±Ç°Ê±¼ä
-	 * @param days ¼Ó¼õÌìÊı
-	 * @param includeTime ÊÇ·ñ°üÀ¨Ê±·ÖÃë,true±íÊ¾°üº¬
+	 * æ—¥æœŸç›¸åŠ å‡å¤©æ•°
+	 * @param date å¦‚æœä¸ºNullï¼Œåˆ™ä¸ºå½“å‰æ—¶é—´
+	 * @param days åŠ å‡å¤©æ•°
+	 * @param includeTime æ˜¯å¦åŒ…æ‹¬æ—¶åˆ†ç§’,trueè¡¨ç¤ºåŒ…å«
 	 * @return
 	 * @throws ParseException
 	 */
@@ -43,10 +43,10 @@ public class DateUtils {
 	}
 
 	/**
-	 * Ê±¼ä¸ñÊ½»¯³É×Ö·û´®
+	 * æ—¶é—´æ ¼å¼åŒ–æˆå­—ç¬¦ä¸²
 	 * @param date Date
-	 * @param pattern StrUtils.DATE_TIME_PATTERN || StrUtils.PATTERN_DATE£¬
-	 *            Èç¹ûÎª¿Õ£¬ÔòÎªyyyy-MM-dd
+	 * @param pattern StrUtils.DATE_TIME_PATTERN || StrUtils.PATTERN_DATEï¼Œ
+	 *            å¦‚æœä¸ºç©ºï¼Œåˆ™ä¸ºyyyy-MM-dd
 	 * @return
 	 * @throws ParseException
 	 */
@@ -59,10 +59,10 @@ public class DateUtils {
 	}
 
 	/**
-	 * ×Ö·û´®½âÎö³ÉÊ±¼ä¶ÔÏó
+	 * å­—ç¬¦ä¸²è§£ææˆæ—¶é—´å¯¹è±¡
 	 * @param dateTimeString String
 	 * @param pattern StrUtils.DATE_TIME_PATTERN ||
-	 *            StrUtils.PATTERN_DATE£¬Èç¹ûÎª¿Õ£¬ÔòÎªyyyy-MM-dd
+	 *            StrUtils.PATTERN_DATEï¼Œå¦‚æœä¸ºç©ºï¼Œåˆ™ä¸ºyyyy-MM-dd
 	 * @return
 	 * @throws ParseException
 	 */
@@ -75,7 +75,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * ½«ÈÕÆÚÊ±¼ä¸ñÊ½³ÉÖ»ÓĞÈÕÆÚµÄ×Ö·û´®£¨¿ÉÒÔÖ±½ÓÊ¹ÓÃdateFormat£¬PatternÎªNull½øĞĞ¸ñÊ½»¯£©
+	 * å°†æ—¥æœŸæ—¶é—´æ ¼å¼æˆåªæœ‰æ—¥æœŸçš„å­—ç¬¦ä¸²ï¼ˆå¯ä»¥ç›´æ¥ä½¿ç”¨dateFormatï¼ŒPatternä¸ºNullè¿›è¡Œæ ¼å¼åŒ–ï¼‰
 	 * @param dateTime Date
 	 * @return
 	 * @throws ParseException
@@ -86,7 +86,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * µ±Ê±¡¢·Ö¡¢ÃëÎª00:00:00Ê±£¬½«ÈÕÆÚÊ±¼ä¸ñÊ½³ÉÖ»ÓĞÈÕÆÚµÄ×Ö·û´®£¬ µ±Ê±¡¢·Ö¡¢Ãë²»Îª00:00:00Ê±£¬Ö±½Ó·µ»Ø
+	 * å½“æ—¶ã€åˆ†ã€ç§’ä¸º00:00:00æ—¶ï¼Œå°†æ—¥æœŸæ—¶é—´æ ¼å¼æˆåªæœ‰æ—¥æœŸçš„å­—ç¬¦ä¸²ï¼Œ å½“æ—¶ã€åˆ†ã€ç§’ä¸ä¸º00:00:00æ—¶ï¼Œç›´æ¥è¿”å›
 	 * @param dateTime Date
 	 * @return
 	 * @throws ParseException
@@ -101,7 +101,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * ½«ÈÕÆÚÊ±¼ä¸ñÊ½³ÉÈÕÆÚ¶ÔÏó£¬ºÍdateParse»¥ÓÃ
+	 * å°†æ—¥æœŸæ—¶é—´æ ¼å¼æˆæ—¥æœŸå¯¹è±¡ï¼Œå’ŒdateParseäº’ç”¨
 	 * @param dateTime Date
 	 * @return Date
 	 * @throws ParseException
@@ -117,9 +117,9 @@ public class DateUtils {
 	}
 
 	/**
-	 * Ê±¼ä¼Ó¼õĞ¡Ê±
-	 * @param startDate Òª´¦ÀíµÄÊ±¼ä£¬NullÔòÎªµ±Ç°Ê±¼ä
-	 * @param hours ¼Ó¼õµÄĞ¡Ê±
+	 * æ—¶é—´åŠ å‡å°æ—¶
+	 * @param startDate è¦å¤„ç†çš„æ—¶é—´ï¼ŒNullåˆ™ä¸ºå½“å‰æ—¶é—´
+	 * @param hours åŠ å‡çš„å°æ—¶
 	 * @return Date
 	 */
 	public static Date dateAddHours(Date startDate, int hours) {
@@ -133,9 +133,9 @@ public class DateUtils {
 	}
 
 	/**
-	 * Ê±¼ä¼Ó¼õ·ÖÖÓ
-	 * @param startDate Òª´¦ÀíµÄÊ±¼ä£¬NullÔòÎªµ±Ç°Ê±¼ä
-	 * @param minutes ¼Ó¼õµÄ·ÖÖÓ
+	 * æ—¶é—´åŠ å‡åˆ†é’Ÿ
+	 * @param startDate è¦å¤„ç†çš„æ—¶é—´ï¼ŒNullåˆ™ä¸ºå½“å‰æ—¶é—´
+	 * @param minutes åŠ å‡çš„åˆ†é’Ÿ
 	 * @return
 	 */
 	public static Date dateAddMinutes(Date startDate, int minutes) {
@@ -149,9 +149,9 @@ public class DateUtils {
 	}
 
 	/**
-	 * Ê±¼ä¼Ó¼õÃëÊı
-	 * @param startDate Òª´¦ÀíµÄÊ±¼ä£¬NullÔòÎªµ±Ç°Ê±¼ä
-	 * @param minutes ¼Ó¼õµÄÃëÊı
+	 * æ—¶é—´åŠ å‡ç§’æ•°
+	 * @param startDate è¦å¤„ç†çš„æ—¶é—´ï¼ŒNullåˆ™ä¸ºå½“å‰æ—¶é—´
+	 * @param minutes åŠ å‡çš„ç§’æ•°
 	 * @return
 	 */
 	public static Date dateAddSeconds(Date startDate, int seconds) {
@@ -165,9 +165,9 @@ public class DateUtils {
 	}
 
 	/**
-	 * Ê±¼ä¼Ó¼õÌìÊı
-	 * @param startDate Òª´¦ÀíµÄÊ±¼ä£¬NullÔòÎªµ±Ç°Ê±¼ä
-	 * @param days ¼Ó¼õµÄÌìÊı
+	 * æ—¶é—´åŠ å‡å¤©æ•°
+	 * @param startDate è¦å¤„ç†çš„æ—¶é—´ï¼ŒNullåˆ™ä¸ºå½“å‰æ—¶é—´
+	 * @param days åŠ å‡çš„å¤©æ•°
 	 * @return Date
 	 */
 	public static Date dateAddDays(Date startDate, int days) {
@@ -181,9 +181,9 @@ public class DateUtils {
 	}
 
 	/**
-	 * Ê±¼ä¼Ó¼õÔÂÊı
-	 * @param startDate Òª´¦ÀíµÄÊ±¼ä£¬NullÔòÎªµ±Ç°Ê±¼ä
-	 * @param months ¼Ó¼õµÄÔÂÊı
+	 * æ—¶é—´åŠ å‡æœˆæ•°
+	 * @param startDate è¦å¤„ç†çš„æ—¶é—´ï¼ŒNullåˆ™ä¸ºå½“å‰æ—¶é—´
+	 * @param months åŠ å‡çš„æœˆæ•°
 	 * @return Date
 	 */
 	public static Date dateAddMonths(Date startDate, int months) {
@@ -197,9 +197,9 @@ public class DateUtils {
 	}
 
 	/**
-	 * Ê±¼ä¼Ó¼õÄêÊı
-	 * @param startDate Òª´¦ÀíµÄÊ±¼ä£¬NullÔòÎªµ±Ç°Ê±¼ä
-	 * @param years ¼Ó¼õµÄÄêÊı
+	 * æ—¶é—´åŠ å‡å¹´æ•°
+	 * @param startDate è¦å¤„ç†çš„æ—¶é—´ï¼ŒNullåˆ™ä¸ºå½“å‰æ—¶é—´
+	 * @param years åŠ å‡çš„å¹´æ•°
 	 * @return Date
 	 */
 	public static Date dateAddYears(Date startDate, int years) {
@@ -213,9 +213,9 @@ public class DateUtils {
 	}
 
 	/**
-	 * Ê±¼ä±È½Ï£¨Èç¹ûmyDate>compareDate·µ»Ø1£¬<·µ»Ø-1£¬ÏàµÈ·µ»Ø0£©
-	 * @param myDate Ê±¼ä
-	 * @param compareDate Òª±È½ÏµÄÊ±¼ä
+	 * æ—¶é—´æ¯”è¾ƒï¼ˆå¦‚æœmyDate>compareDateè¿”å›1ï¼Œ<è¿”å›-1ï¼Œç›¸ç­‰è¿”å›0ï¼‰
+	 * @param myDate æ—¶é—´
+	 * @param compareDate è¦æ¯”è¾ƒçš„æ—¶é—´
 	 * @return int
 	 */
 	public static int dateCompare(Date myDate, Date compareDate) {
@@ -227,7 +227,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * »ñÈ¡Á½¸öÊ±¼äÖĞ×îĞ¡µÄÒ»¸öÊ±¼ä
+	 * è·å–ä¸¤ä¸ªæ—¶é—´ä¸­æœ€å°çš„ä¸€ä¸ªæ—¶é—´
 	 * @param date
 	 * @param compareDate
 	 * @return
@@ -248,7 +248,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * »ñÈ¡Á½¸öÊ±¼äÖĞ×î´óµÄÒ»¸öÊ±¼ä
+	 * è·å–ä¸¤ä¸ªæ—¶é—´ä¸­æœ€å¤§çš„ä¸€ä¸ªæ—¶é—´
 	 * @param date
 	 * @param compareDate
 	 * @return
@@ -269,7 +269,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * »ñÈ¡Á½¸öÈÕÆÚ£¨²»º¬Ê±·ÖÃë£©Ïà²îµÄÌìÊı£¬²»°üº¬½ñÌì
+	 * è·å–ä¸¤ä¸ªæ—¥æœŸï¼ˆä¸å«æ—¶åˆ†ç§’ï¼‰ç›¸å·®çš„å¤©æ•°ï¼Œä¸åŒ…å«ä»Šå¤©
 	 * @param startDate
 	 * @param endDate
 	 * @return
@@ -286,7 +286,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * »ñÈ¡Á½¸öÈÕÆÚ£¨²»º¬Ê±·ÖÃë£©Ïà²îµÄÌìÊı£¬°üº¬½ñÌì
+	 * è·å–ä¸¤ä¸ªæ—¥æœŸï¼ˆä¸å«æ—¶åˆ†ç§’ï¼‰ç›¸å·®çš„å¤©æ•°ï¼ŒåŒ…å«ä»Šå¤©
 	 * @param startDate
 	 * @param endDate
 	 * @return
@@ -297,7 +297,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * »ñÈ¡ÈÕÆÚÊ±¼äµÄÄê·İ£¬Èç2017-02-13£¬·µ»Ø2017
+	 * è·å–æ—¥æœŸæ—¶é—´çš„å¹´ä»½ï¼Œå¦‚2017-02-13ï¼Œè¿”å›2017
 	 * @param date
 	 * @return
 	 */
@@ -308,7 +308,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * »ñÈ¡ÈÕÆÚÊ±¼äµÄÔÂ·İ£¬Èç2017Äê2ÔÂ13ÈÕ£¬·µ»Ø2
+	 * è·å–æ—¥æœŸæ—¶é—´çš„æœˆä»½ï¼Œå¦‚2017å¹´2æœˆ13æ—¥ï¼Œè¿”å›2
 	 * @param date
 	 * @return
 	 */
@@ -319,7 +319,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * »ñÈ¡ÈÕÆÚÊ±¼äµÄµÚ¼¸Ìì£¨¼´·µ»ØÈÕÆÚµÄdd£©£¬Èç2017-02-13£¬·µ»Ø13
+	 * è·å–æ—¥æœŸæ—¶é—´çš„ç¬¬å‡ å¤©ï¼ˆå³è¿”å›æ—¥æœŸçš„ddï¼‰ï¼Œå¦‚2017-02-13ï¼Œè¿”å›13
 	 * @param date
 	 * @return
 	 */
@@ -330,7 +330,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * »ñÈ¡ÈÕÆÚÊ±¼äµ±ÔÂµÄ×ÜÌìÊı£¬Èç2017-02-13£¬·µ»Ø28
+	 * è·å–æ—¥æœŸæ—¶é—´å½“æœˆçš„æ€»å¤©æ•°ï¼Œå¦‚2017-02-13ï¼Œè¿”å›28
 	 * @param date
 	 * @return
 	 */
@@ -341,7 +341,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * »ñÈ¡ÈÕÆÚÊ±¼äµ±ÄêµÄ×ÜÌìÊı£¬Èç2017-02-13£¬·µ»Ø2017ÄêµÄ×ÜÌìÊı
+	 * è·å–æ—¥æœŸæ—¶é—´å½“å¹´çš„æ€»å¤©æ•°ï¼Œå¦‚2017-02-13ï¼Œè¿”å›2017å¹´çš„æ€»å¤©æ•°
 	 * @param date
 	 * @return
 	 */
@@ -352,8 +352,8 @@ public class DateUtils {
 	}
 
 	/**
-	 * ¸ù¾İÊ±¼ä»ñÈ¡µ±ÔÂ×î´óµÄÈÕÆÚ <li>2017-02-13£¬·µ»Ø2017-02-28</li> <li>
-	 * 2016-02-13£¬·µ»Ø2016-02-29</li> <li>2016-01-11£¬·µ»Ø2016-01-31</li>
+	 * æ ¹æ®æ—¶é—´è·å–å½“æœˆæœ€å¤§çš„æ—¥æœŸ <li>2017-02-13ï¼Œè¿”å›2017-02-28</li> <li>
+	 * 2016-02-13ï¼Œè¿”å›2016-02-29</li> <li>2016-01-11ï¼Œè¿”å›2016-01-31</li>
 	 * @param date Date
 	 * @return
 	 * @throws Exception
@@ -366,7 +366,7 @@ public class DateUtils {
 	}
 
 	/**
-	 * ¸ù¾İÊ±¼ä»ñÈ¡µ±ÔÂ×îĞ¡µÄÈÕÆÚ£¬Ò²¾ÍÊÇ·µ»Øµ±ÔÂµÄ1ºÅÈÕÆÚ¶ÔÏó
+	 * æ ¹æ®æ—¶é—´è·å–å½“æœˆæœ€å°çš„æ—¥æœŸï¼Œä¹Ÿå°±æ˜¯è¿”å›å½“æœˆçš„1å·æ—¥æœŸå¯¹è±¡
 	 * @param date Date
 	 * @return
 	 * @throws Exception
@@ -379,19 +379,19 @@ public class DateUtils {
 	}
 
 	public static void main(String[] args) throws Exception {
-		System.out.println("¸ñÊ½»¯1:" + dateTimeToDateStringIfTimeEndZero(new Date()));
-		System.out.println("¸ñÊ½»¯2:" + dateTimeToDateStringIfTimeEndZero(dateTimeToDate(new Date())));
-		System.out.println("Ïà²îÌìÊı(°üº¬½ñÌì):"
+		System.out.println("æ ¼å¼åŒ–1:" + dateTimeToDateStringIfTimeEndZero(new Date()));
+		System.out.println("æ ¼å¼åŒ–2:" + dateTimeToDateStringIfTimeEndZero(dateTimeToDate(new Date())));
+		System.out.println("ç›¸å·®å¤©æ•°(åŒ…å«ä»Šå¤©):"
 				+ dateBetween(dateParse("2017-01-30", null), dateParse("2017-02-01", null), true));
-		System.out.println("Ïà²îÌìÊı(²»º¬½ñÌì):" + dateBetween(dateParse("2017-01-30", null), dateParse("2017-02-01", null)));
-		System.out.println("ÔÂ·İµÚ¼¸Ìì:" + getDate(dateParse("2017-01-17", null)));
-		System.out.println("µ±ÔÂ×ÜÌìÊı:" + getDaysOfMonth(dateParse("2017-02-01", null)));
-		System.out.println("µ±Äê×ÜÌìÊı:" + getDaysOfYear(dateParse("2017-01-30", null)));
-		System.out.println("ÌáÇ°12ÔÂ:"
+		System.out.println("ç›¸å·®å¤©æ•°(ä¸å«ä»Šå¤©):" + dateBetween(dateParse("2017-01-30", null), dateParse("2017-02-01", null)));
+		System.out.println("æœˆä»½ç¬¬å‡ å¤©:" + getDate(dateParse("2017-01-17", null)));
+		System.out.println("å½“æœˆæ€»å¤©æ•°:" + getDaysOfMonth(dateParse("2017-02-01", null)));
+		System.out.println("å½“å¹´æ€»å¤©æ•°:" + getDaysOfYear(dateParse("2017-01-30", null)));
+		System.out.println("æå‰12æœˆ:"
 				+ dateFormat(dateAddMonths(dateParse("2017-02-07", DateUtils.PATTERN_DATE), -12),
 						DateUtils.PATTERN_DATE));
-		System.out.println("ÔÂÄ©:" + dateFormat(maxDateOfMonth(dateParse("2016-02-01", DateUtils.PATTERN_DATE)), null));
-		System.out.println("ÔÂ³õ:" + dateFormat(minDateOfMonth(dateParse("2016-03-31", null)), null));
+		System.out.println("æœˆæœ«:" + dateFormat(maxDateOfMonth(dateParse("2016-02-01", DateUtils.PATTERN_DATE)), null));
+		System.out.println("æœˆåˆ:" + dateFormat(minDateOfMonth(dateParse("2016-03-31", null)), null));
 	}
 
 }
