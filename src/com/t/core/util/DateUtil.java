@@ -9,7 +9,7 @@ import java.util.Date;
  * 日期工具类
  * @author TimmyTan
  */
-public class DateUtils {
+public class DateUtil {
 
 	public static final String PATTERN_DATETIME = "yyyy-MM-dd HH:mm:ss";
 	public static final String PATTERN_MINUTE = "yyyy-MM-dd HH:mm";
@@ -33,7 +33,7 @@ public class DateUtils {
 			date = new Date();
 		}
 		if (!includeTime) {
-			SimpleDateFormat sdf = new SimpleDateFormat(DateUtils.PATTERN_DATE);
+			SimpleDateFormat sdf = new SimpleDateFormat(DateUtil.PATTERN_DATE);
 			date = sdf.parse(sdf.format(date));
 		}
 		Calendar cal = Calendar.getInstance();
@@ -51,8 +51,8 @@ public class DateUtils {
 	 * @throws ParseException
 	 */
 	public static String dateFormat(Date date, String pattern) throws ParseException {
-		if (StrUtils.isBlank(pattern)) {
-			pattern = DateUtils.PATTERN_DATE;
+		if (StringUtil.isEmpty(pattern)) {
+			pattern = DateUtil.PATTERN_DATE;
 		}
 		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 		return sdf.format(date);
@@ -67,8 +67,8 @@ public class DateUtils {
 	 * @throws ParseException
 	 */
 	public static Date dateParse(String dateTimeString, String pattern) throws ParseException {
-		if (StrUtils.isBlank(pattern)) {
-			pattern = DateUtils.PATTERN_DATE;
+		if (StringUtil.isEmpty(pattern)) {
+			pattern = DateUtil.PATTERN_DATE;
 		}
 		SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 		return sdf.parse(dateTimeString);
@@ -81,7 +81,7 @@ public class DateUtils {
 	 * @throws ParseException
 	 */
 	public static String dateTimeToDateString(Date dateTime) throws ParseException {
-		String dateTimeString = DateUtils.dateFormat(dateTime, DateUtils.PATTERN_DATETIME);
+		String dateTimeString = DateUtil.dateFormat(dateTime, DateUtil.PATTERN_DATETIME);
 		return dateTimeString.substring(0, 10);
 	}
 
@@ -92,7 +92,7 @@ public class DateUtils {
 	 * @throws ParseException
 	 */
 	public static String dateTimeToDateStringIfTimeEndZero(Date dateTime) throws ParseException {
-		String dateTimeString = DateUtils.dateFormat(dateTime, DateUtils.PATTERN_DATETIME);
+		String dateTimeString = DateUtil.dateFormat(dateTime, DateUtil.PATTERN_DATETIME);
 		if (dateTimeString.endsWith("00:00:00")) {
 			return dateTimeString.substring(0, 10);
 		} else {
@@ -387,10 +387,11 @@ public class DateUtils {
 		System.out.println("月份第几天:" + getDate(dateParse("2017-01-17", null)));
 		System.out.println("当月总天数:" + getDaysOfMonth(dateParse("2017-02-01", null)));
 		System.out.println("当年总天数:" + getDaysOfYear(dateParse("2017-01-30", null)));
-		System.out.println("提前12月:"
-				+ dateFormat(dateAddMonths(dateParse("2017-02-07", DateUtils.PATTERN_DATE), -12),
-						DateUtils.PATTERN_DATE));
-		System.out.println("月末:" + dateFormat(maxDateOfMonth(dateParse("2016-02-01", DateUtils.PATTERN_DATE)), null));
+		System.out
+				.println("提前12月:"
+						+ dateFormat(dateAddMonths(dateParse("2017-02-07", DateUtil.PATTERN_DATE), -12),
+								DateUtil.PATTERN_DATE));
+		System.out.println("月末:" + dateFormat(maxDateOfMonth(dateParse("2016-02-01", DateUtil.PATTERN_DATE)), null));
 		System.out.println("月初:" + dateFormat(minDateOfMonth(dateParse("2016-03-31", null)), null));
 	}
 
