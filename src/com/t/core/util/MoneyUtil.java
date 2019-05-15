@@ -1,5 +1,7 @@
 package com.t.core.util;
 
+import java.text.DecimalFormat;
+
 public class MoneyUtil {
 
 	private static final String UNIT = "万千佰拾亿千佰拾万千佰拾元角分";
@@ -42,6 +44,36 @@ public class MoneyUtil {
 		}
 		rs = rs.replaceAll("亿万", "亿");
 		return rs;
+	}
+
+	/**
+	 * 转金钱格式
+	 * @param m
+	 * @return String
+	 */
+	public static String parseToMoney(String m) {
+		try {
+			DecimalFormat df = new DecimalFormat("######0.00");
+			return df.format(m);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return m;
+	}
+
+	/**
+	 * 转金钱格式
+	 * @param m
+	 * @return String
+	 */
+	public static String parseToMoney(double m) {
+		try {
+			DecimalFormat df = new DecimalFormat("######0.00");
+			return df.format(m);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return String.valueOf(m);
 	}
 
 	public static void main(String[] args) {
