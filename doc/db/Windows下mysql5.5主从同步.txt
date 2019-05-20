@@ -1,0 +1,97 @@
+https://www.cnblogs.com/puchengjie/p/5220676.html
+Windows下mysql5.5主从同步
+
+前置条件：
+
+A主机（作为主服务器）
+
+环境：Win7，mysql5.5 IP：172.17.42.82
+
+B主机（作为从服务器）
+
+环境：Win7，mysql5.5 IP：172.17.42.156
+
+主服务器配置：
+
+1.在A的mysql数据库中建立一个同步专用账户slave
+
+命令：GRANT REPLICATION SLAVE,RELOAD,SUPER ON *.* TO slave@'172.17.42.156' IDENTIFIED BY '517na.com';
+
+注释：172.17.42.156为从服务器的IP  slave为账户  517na.com为密码
+
+2.对A服务器配置进行修改 打开mysql/my.ini文件，在[mysqld]下面添加如下内容：
+
+#服务ID，可随意指定，但保证唯一
+server-id=10 
+#开启binlog
+log-bin=mysql-bin
+#指定同步数据库
+binlog-do-db=test	
+#日志文件保留的天数：
+expire_logs_days = 7
+
+其中： server-id：为主服务器A的ID值（建议1-32，最好10以后）
+
+log-bin：二进制变更日值
+
+3.重启A服务器(从现在起，它将把客户端有关数据库的修改记载到二进制变更日志里去)
+
+命令：
+
+　　net stop mysql  
+
+　　net start mysql
+
+从服务器配置：
+
+1.对B服务器配置进行修改 打开mysql/my.ini文件，在[mysqld]下面添加如下内容：
+
+server-id=11
+
+log-bin=mysql-bin
+
+relay-log=relay-bin
+
+relay-log-index=relay-bin-index
+
+replicate-do-db=SongyuStock
+
+注释：replicate-do-db：需要同步的数据库
+
+2.重启B服务器
+
+3.登录mysql，输入如下命令：
+
+stop slave;
+
+change master to master_host='172.17.42.82',master_user='slave',master_password='517na.com';
+
+start slave;
+
+4.查看设置是否正确
+
+命令：show slave status\G;
+
+主要是看以下两项是否为YES：
+
+Slave_IO_Running: Yes
+
+Slave_SQL_Running: Yes
+
+备注：
+
+1.查看sever_id的命令：show varias like 'server_id';
+
+2.参考文章：http://blog.csdn.net/g2321514568/article/details/12441049
+
+配置中常见错误：
+
+1.ERROR 1200 (HY000): The server is not configured as slave; fix in config file or with CHANGE MASTER TO
+
+解决方案： http://bg.artuion.com/window_linux/122.html
+
+2.MySQL同步故障：" Slave_SQL_Running:No" 两种解决办法 
+
+解决方案： http://blog.chinaunix.net/uid-21505614-id-289477.html http://kerry.blog.51cto.com/172631/277414
+
+3.linux下配置主从 参考文章： http://www.cnblogs.com/cchun/p/3712637.html
