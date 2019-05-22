@@ -38,7 +38,7 @@ public class Test {
 			Statement statement = (Statement) con.createStatement();
 			// 要执行的SQL语句
 			String sql = "";
-			int total = 100;
+			int total = 10;
 			for (int i = 0; i < total; i++) {
 				long t1 = System.currentTimeMillis();
 

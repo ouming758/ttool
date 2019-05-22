@@ -1,36 +1,33 @@
-https://www.cnblogs.com/puchengjie/p/5220676.html
+参考文章:https://www.cnblogs.com/puchengjie/p/5220676.html
+
 Windows下mysql5.5主从同步
 
 前置条件：
 
 A主机（作为主服务器）
 
-环境：Win7，mysql5.5 IP：172.17.42.82
+环境：WinXP，mysql5.5 IP：192.168.1.246
 
 B主机（作为从服务器）
 
-环境：Win7，mysql5.5 IP：172.17.42.156
+环境：WinXP，mysql5.5 IP：192.168.1.247
 
 主服务器配置：
 
 1.在A的mysql数据库中建立一个同步专用账户slave
 
-命令：GRANT REPLICATION SLAVE,RELOAD,SUPER ON *.* TO slave@'172.17.42.156' IDENTIFIED BY '517na.com';
+命令：GRANT REPLICATION SLAVE,SELECT ON *.* TO slave@'192.168.1.247' IDENTIFIED BY 'slave123456';
 
-注释：172.17.42.156为从服务器的IP  slave为账户  517na.com为密码
+注释：192.168.1.247为从服务器的IP  slave为账户  slave123456为密码
 
 2.对A服务器配置进行修改 打开mysql/my.ini文件，在[mysqld]下面添加如下内容：
 
-#服务ID，可随意指定，但保证唯一
 server-id=10 
-#开启binlog
 log-bin=mysql-bin
-#指定同步数据库
-binlog-do-db=test	
-#日志文件保留的天数：
-expire_logs_days = 7
+binlog-do-db=testdb	
+expire_logs_days=30
 
-其中： server-id：为主服务器A的ID值（建议1-32，最好10以后）
+其中： server-id：为主服务器A的ID值（建议1-32，最好10以后）,binlog-do-db：为指定同步的数据库
 
 log-bin：二进制变更日值
 
@@ -47,16 +44,13 @@ log-bin：二进制变更日值
 1.对B服务器配置进行修改 打开mysql/my.ini文件，在[mysqld]下面添加如下内容：
 
 server-id=11
-
 log-bin=mysql-bin
-
 relay-log=relay-bin
-
 relay-log-index=relay-bin-index
+replicate-do-db=testdb
+read_only=1
 
-replicate-do-db=SongyuStock
-
-注释：replicate-do-db：需要同步的数据库
+注释：replicate-do-db：需要同步的数据库   read_only=1设置从库为只读数据库(具有super权限用户无法控制)
 
 2.重启B服务器
 
@@ -64,13 +58,13 @@ replicate-do-db=SongyuStock
 
 stop slave;
 
-change master to master_host='172.17.42.82',master_user='slave',master_password='517na.com';
+change master to master_host='192.168.1.246',master_user='slave',master_password='slave123456';
 
 start slave;
 
 4.查看设置是否正确
 
-命令：show slave status\G;
+命令：show slave status;
 
 主要是看以下两项是否为YES：
 
